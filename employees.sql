@@ -39,7 +39,7 @@ DROP TABLE IF EXISTS dept_emp,
 /*!50503 select CONCAT('storage engine: ', @@default_storage_engine) as INFO */;
 
 CREATE TABLE employees (
-    emp_no      INT             NOT NULL,
+    emp_no      INT             NOT NULL AUTO_INCREMENT,
     birth_date  DATE            NOT NULL,
     first_name  VARCHAR(14)     NOT NULL,
     last_name   VARCHAR(16)     NOT NULL,
@@ -47,6 +47,8 @@ CREATE TABLE employees (
     hire_date   DATE            NOT NULL,
     PRIMARY KEY (emp_no)
 );
+
+ALTER TABLE employees AUTO_INCREMENT = 500000;
 
 CREATE TABLE departments (
     dept_no     CHAR(4)         NOT NULL,
